@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <catalog_category_layered translate="label">
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/sd/ajaxadd/ajaxadd.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sd/ajaxadd/ajaxadd.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sd/ajaxadd/jquery.fancybox.pack.js</name></action>
+        </reference>
+        <reference name="content">
+            <block type="catalog/category_view" name="category.products" template="catalog/category/view.phtml">
+                <block type="catalog/product_list" name="product_list" template="ajaxadd/catalog/product/list.phtml">
+                    <!-- <action method="addReviewSummaryTemplate"><type>default</type><template>review/helper/su.phtml</template></action> -->
+                    <block type="catalog/product_list_toolbar" name="product_list_toolbar" template="catalog/product/list/toolbar.phtml">
+                        <block type="page/html_pager" name="product_list_toolbar_pager"/>
+                        <!-- The following code shows how to set your own pager increments -->
+                        <!--
+                            <action method="setDefaultListPerPage"><limit>10</limit></action>
+                            <action method="setDefaultGridPerPage"><limit>8</limit></action>
+                            <action method="addPagerLimit"><mode>list</mode><limit>10</limit></action>
+                            <action method="addPagerLimit"><mode>list</mode><limit>20</limit></action>
+                            <action method="addPagerLimit"><mode>list</mode><limit>30</limit></action>
+                            <action method="addPagerLimit" translate="label"><mode>list</mode><limit>all</limit><label>All</label></action>
+                            <action method="addPagerLimit"><mode>grid</mode><limit>8</limit></action>
+                            <action method="addPagerLimit"><mode>grid</mode><limit>16</limit></action>
+                            <action method="addPagerLimit"><mode>grid</mode><limit>24</limit></action>
+                            <action method="addPagerLimit" translate="label"><mode>grid</mode><limit>all</limit><label>All</label></action>
+                        -->
+                    </block>
+                    <!--action method="addColumnCountLayoutDepend"><layout>empty</layout><count>6</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>one_column</layout><count>5</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>two_columns_left</layout><count>4</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>two_columns_right</layout><count>4</count></action>
+                    <action method="addColumnCountLayoutDepend"><layout>three_columns</layout><count>3</count></action-->
+                    <action method="setColumnCount"><count>4</count></action>
+                    <action method="setToolbarBlockName"><name>product_list_toolbar</name></action>
+                </block>
+            </block>
+        </reference>
+    </catalog_category_layered>
+    
+    <catalogsearch_result_index>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/sd/ajaxadd/ajaxadd.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sd/ajaxadd/ajaxadd.js</name></action>
+        </reference>
+        <reference name="category.products">
+            <action method="setTemplate"><template>ajaxadd/catalog/product/list.phtml</template></action>
+        </reference>
+    </catalogsearch_result_index>
+     
+     <sd_manager_manufacturerinfo>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/sd/ajaxadd/ajaxadd.css</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/sd/ajaxadd/ajaxadd.js</name></action>
+        </reference>
+    </sd_manager_manufacturerinfo>
+    
+</layout>
